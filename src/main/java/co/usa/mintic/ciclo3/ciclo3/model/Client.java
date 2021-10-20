@@ -18,7 +18,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 @Entity
 @Table(name="client")
@@ -28,8 +28,8 @@ public class Client implements Serializable{
     private Integer idClient;
     private String name;
     private String email;
-    private Integer age;
     private String password;
+    private Integer age;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
@@ -63,20 +63,20 @@ public class Client implements Serializable{
         this.email = email;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public List<Message> getMessages() {

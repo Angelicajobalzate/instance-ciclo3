@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 
 @RestController

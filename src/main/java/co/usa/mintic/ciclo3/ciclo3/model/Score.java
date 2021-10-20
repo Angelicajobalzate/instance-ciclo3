@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 @Entity
 @Table(name="score")

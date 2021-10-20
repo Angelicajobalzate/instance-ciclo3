@@ -19,7 +19,7 @@ import javax.persistence.ManyToOne;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 @Entity
 @Table(name="reservation")

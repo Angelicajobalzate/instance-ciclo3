@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 @Service
 public class CarService {
@@ -30,10 +30,10 @@ public class CarService {
     }
 
     public Car save(Car c) {
-        if (c.getId() == null) {
+        if (c.getIdCar() == null) {
             return carRepository.save(c);
         } else {
-            Optional<Car> caux = carRepository.getCar(c.getId());
+            Optional<Car> caux = carRepository.getCar(c.getIdCar());
             if (!caux.isPresent()) {
                 return carRepository.save(c);
             } else {

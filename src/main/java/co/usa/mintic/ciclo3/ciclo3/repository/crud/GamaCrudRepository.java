@@ -10,7 +10,7 @@ import org.springframework.data.repository.CrudRepository;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 public interface GamaCrudRepository extends CrudRepository<Gama, Integer>{
     

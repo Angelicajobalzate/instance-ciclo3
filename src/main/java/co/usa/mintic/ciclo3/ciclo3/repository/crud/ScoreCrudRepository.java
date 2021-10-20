@@ -10,7 +10,7 @@ import org.springframework.data.repository.CrudRepository;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 public interface ScoreCrudRepository extends CrudRepository <Score, Integer>{   
 }

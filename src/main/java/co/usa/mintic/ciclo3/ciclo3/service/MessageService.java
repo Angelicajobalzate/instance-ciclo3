@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 
 @Service
@@ -32,10 +32,10 @@ public class MessageService {
     }
     
     public Message save(Message m){
-        if(m.getIdMsg()==null){
+        if(m.getIdMessage()==null){
             return messageRepository.save(m);           
         }else{
-            Optional<Message> maux=messageRepository.getMessage(m.getIdMsg());
+            Optional<Message> maux=messageRepository.getMessage(m.getIdMessage());
             if(!maux.isPresent()){
                 return messageRepository.save(m);
             }else{

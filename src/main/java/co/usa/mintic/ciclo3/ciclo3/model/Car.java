@@ -1,14 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Proyecto Ciclo 3 Reto 3
+ * MicTic 2022
  */
 package co.usa.mintic.ciclo3.ciclo3.model;
-
+// Importaciones librerias
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,16 +20,16 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 @Entity
 @Table(name="car")
 public class Car implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idCar;
+    private String name;
     private String brand;
-    private Integer model;
     private Integer year;
     private String description;
     
@@ -47,12 +47,21 @@ private List<Message> messages;
 @JsonIgnoreProperties("car")
 private List<Reservation> reservations;
 
-    public Integer getId() {
-        return id;
+
+    public Integer getIdCar() {
+        return idCar;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdCar(Integer idCar) {
+        this.idCar = idCar;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getBrand() {
@@ -61,14 +70,6 @@ private List<Reservation> reservations;
 
     public void setBrand(String brand) {
         this.brand = brand;
-    }
-
-    public Integer getModel() {
-        return model;
-    }
-
-    public void setModel(Integer model) {
-        this.model = model;
     }
 
     public Integer getYear() {
@@ -110,7 +111,5 @@ private List<Reservation> reservations;
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-
-    
 
 }

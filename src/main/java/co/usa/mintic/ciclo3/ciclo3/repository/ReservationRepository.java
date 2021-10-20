@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Formacion
+ * @author Angélica Alzate
  */
 @Repository
 public class ReservationRepository {
