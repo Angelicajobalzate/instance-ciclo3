@@ -64,10 +64,6 @@ public class Gama implements Serializable{
 
     public void setCars(List<Car> cars) {
         this.cars = cars;
-    }
-
-    
-   
-       
+    }      
    
 }

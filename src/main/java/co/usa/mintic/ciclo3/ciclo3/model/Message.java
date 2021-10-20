@@ -24,7 +24,7 @@ import javax.persistence.Table;
 public class Message implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idMessage;
+    private Integer idMsg;
     private String messageText;
     
     
@@ -38,12 +38,12 @@ public class Message implements Serializable{
     @JsonIgnoreProperties({"messages", "reservations"})
     private Client client;
 
-    public Integer getIdMessage() {
-        return idMessage;
+    public Integer getIdMsg() {
+        return idMsg;
     }
 
-    public void setIdMessage(Integer idMessage) {
-        this.idMessage = idMessage;
+    public void setIdMsg(Integer idMsg) {
+        this.idMsg = idMsg;
     }
 
     public String getMessageText() {

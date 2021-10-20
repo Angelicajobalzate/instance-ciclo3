@@ -32,10 +32,10 @@ public class MessageService {
     }
     
     public Message save(Message m){
-        if(m.getIdMessage()==null){
+        if(m.getIdMsg()==null){
             return messageRepository.save(m);           
         }else{
-            Optional<Message> maux=messageRepository.getMessage(m.getIdMessage());
+            Optional<Message> maux=messageRepository.getMessage(m.getIdMsg());
             if(!maux.isPresent()){
                 return messageRepository.save(m);
             }else{
