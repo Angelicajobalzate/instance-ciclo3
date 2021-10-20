@@ -1,16 +1,15 @@
 /*
- * Proyecto Ciclo 3 Reto 3
- * MicTic 2022
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package co.usa.mintic.ciclo3.ciclo3.model;
-// Importaciones librerias
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,18 +20,17 @@ import javax.persistence.Table;
  *
  * @author Angélica Alzate
  */
+
 @Entity
 @Table(name="car")
 public class Car implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCar;
-    private String name;
-    private String brand;
-    private Integer year;
-    private String description;
-    
-    
+  @Id
+  private Integer idCar;
+  private String name;
+  private String brand;
+  private Integer year;
+  private String description;
+  
 @ManyToOne
 @JoinColumn(name = "idGama")
 @JsonIgnoreProperties("cars")
@@ -45,7 +43,6 @@ private List<Message> messages;
 @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
 @JsonIgnoreProperties("car")
 private List<Reservation> reservations;
-
 
     public Integer getIdCar() {
         return idCar;
@@ -110,5 +107,5 @@ private List<Reservation> reservations;
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-
+    
 }
