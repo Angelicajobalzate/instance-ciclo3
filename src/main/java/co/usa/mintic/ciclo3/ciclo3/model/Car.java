@@ -10,6 +10,8 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -23,26 +25,32 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="car")
+
 public class Car implements Serializable{
-  @Id
-  private Integer idCar;
-  private String name;
-  private String brand;
-  private Integer year;
-  private String description;
-  
-@ManyToOne
-@JoinColumn(name = "idGama")
-@JsonIgnoreProperties("cars")
-private Gama gama;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idCar;
+    private String name;
+    private String brand;
+    private Integer year;
+    private String description;
+    
+    @ManyToOne
+        @JoinColumn(name = "idGama")
+        @JsonIgnoreProperties("cars")
 
-@OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
-@JsonIgnoreProperties({"car","client"})
-private List<Message> messages;
+    private Gama gama;
 
-@OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
-@JsonIgnoreProperties("car")
-private List<Reservation> reservations;
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
+    @JsonIgnoreProperties({"car", "client"})
+    
+    private List<Message> messages;
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
+    @JsonIgnoreProperties("car")
+    
+    private List<Reservation> reservations;
 
     public Integer getIdCar() {
         return idCar;
@@ -107,5 +115,7 @@ private List<Reservation> reservations;
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-    
+      
+        
+        
 }

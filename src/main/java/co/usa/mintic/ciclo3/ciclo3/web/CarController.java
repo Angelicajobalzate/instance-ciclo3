@@ -28,27 +28,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/Car")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
-
 public class CarController {
+    
     @Autowired
     private CarService carService;
     
     @GetMapping("/all")
-    public List<Car> getCars(){
+    public List<Car> getcars(){
         return carService.getAll();
     }
     
-    @GetMapping("/{id}")
-    public Optional<Car> getCar(@PathVariable("id")int id){
-        return carService.getCar(id);
-    }
-            
-            
+    @GetMapping("/{idCar}")
+    public Optional<Car> getCar(@PathVariable("idCar")int idCar){
+        return carService.getCar(idCar);
+}
+    
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Car save(@RequestBody Car c){
         return carService.save(c);
     }
-   
+    
+    
     
 }

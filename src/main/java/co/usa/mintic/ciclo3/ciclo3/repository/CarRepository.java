@@ -18,17 +18,19 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class CarRepository {
-     @Autowired
+    
+    @Autowired
     private CarCrudRepository carCrudRepository;
     
     public List<Car> getAll(){
         return (List<Car>) carCrudRepository.findAll();
     }
-    public Optional<Car> getCar(int id){
-        return carCrudRepository.findById(id);
+        
+    public Optional<Car> getCar(int idCar){
+        return carCrudRepository.findById(idCar);     
     }
+    
     public Car save(Car c){
         return carCrudRepository.save(c);
     }
-    
 }

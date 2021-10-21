@@ -18,25 +18,27 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CarService {
+
     @Autowired
     private CarRepository carRepository;
 
     public List<Car> getAll() {
         return carRepository.getAll();
+
     }
 
-    public Optional<Car> getCar(int id) {
-        return carRepository.getCar(id);
+    public Optional<Car> getCar(int idCar) {
+        return carRepository.getCar(idCar);
     }
-
-    public Car save(Car c) {
-        if (c.getIdCar() == null) {
+    
+    public Car save(Car c){
+        if(c.getIdCar()== null){
             return carRepository.save(c);
-        } else {
-            Optional<Car> caux = carRepository.getCar(c.getIdCar());
-            if (!caux.isPresent()) {
+        }else{
+            Optional<Car> caux=carRepository.getCar(c.getIdCar());
+            if(!caux.isPresent()){
                 return carRepository.save(c);
-            } else {
+            }else{
                 return c;
             }
         }
